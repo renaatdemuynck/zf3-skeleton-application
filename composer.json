@@ -1,0 +1,29 @@
+{
+    "name": "renaatdemuynck/zf3-skeleton-application",
+    "description": "Skeleton application based on Zend Framework 3 components",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Renaat De Muynck",
+            "email": "renaat.demuynck@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "5.6 || ~7",
+        "ext-intl": "*",
+        "zendframework/zend-mvc": "^3",
+        "zendframework/zend-mvc-i18n": "*",
+        "zendframework/zend-navigation": "*"
+    },
+    "require-dev": {
+        "zendframework/zend-developer-tools": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Application\\": "module/Application/src/"
+        }
+    }
+}

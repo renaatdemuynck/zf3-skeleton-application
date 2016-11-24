@@ -1,0 +1,25 @@
+<?= $this->doctype(); ?>
+<html lang="<?= $this->plugin('translate')->getTranslator()->getLocale(); ?>">
+<head>
+    <meta charset="utf-8" />
+    <?= $this->headTitle('ZF3 Skeleton Application')->setSeparator(' - ')->setAutoEscape(false) ?>
+    <?= $this->headMeta() ?>
+    <?= $this->headLink() ?>
+    <?= $this->headStyle() ?>
+    <?= $this->headScript() ?>
+</head>
+<body>
+    <header>
+        <nav>
+            <?= $this->navigation('navigation')->menu() ?>
+        </nav>
+    </header>
+    <main>
+        <?= $this->content ?>
+    </main>
+    <footer>
+        &copy;2017 Renaat De Muynck &mdash; <a href="https://github.com/renaatdemuynck/zf3-skeleton-application">GitHub</a>
+    </footer>
+    <?= $this->inlineScript() ?>
+</body>
+</html>
