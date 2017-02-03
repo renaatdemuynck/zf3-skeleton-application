@@ -6,6 +6,8 @@ return [
         'Zend\I18n',
         'Zend\Router',
         'Zend\Navigation',
+        'DoctrineModule',
+        'DoctrineORMModule',
         'Application'
     ],
     'module_listener_options' => [
