@@ -3,6 +3,7 @@ namespace Application;
 
 use Zend\Config\Config;
 use Zend\Mvc\MvcEvent;
+use Zend\Http\Request as HttpRequest;
 use Locale;
 
 class Module
@@ -10,9 +11,11 @@ class Module
 
     public function onBootstrap(MvcEvent $e)
     {
-        $locale = Locale::getPrimaryLanguage(Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']));
-        $translator = $e->getApplication()->getServiceManager()->get('MvcTranslator');
-        $translator->setLocale($locale);
+        if ($e->getRequest() instanceof HttpRequest && php_sapi_name() !== 'cli') {
+            $locale = Locale::getPrimaryLanguage(Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']));
+            $translator = $e->getApplication()->getServiceManager()->get('MvcTranslator');
+            $translator->setLocale($locale);
+        }
     }
 
     public function getConfig()
