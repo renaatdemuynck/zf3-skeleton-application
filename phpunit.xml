@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.5/phpunit.xsd"
+         bootstrap="module/Application/tests/bootstrap.php"
+         colors="true">
+    <testsuites>
+        <testsuite name="Application\Model\Entity">
+            <directory>module/Application/tests/Model/Entity</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
