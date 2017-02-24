@@ -61,13 +61,12 @@ EOF
       a2dissite 000-default
       a2ensite zf3-skeleton-application
       
-      # Create dir for logs
-      mkdir -p /vagrant/data/logs
-      
       # (Re)start Apache
       service apache2 restart
       
     SHELL
   end
+  
+  config.vm.provision :shell, path: "bin/install.sh"
   
 end
