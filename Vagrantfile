@@ -18,7 +18,7 @@ Vagrant.configure('2') do |config|
       
       # Install Apache 2.4 and PHP 5.6
       add-apt-repository -y ppa:ondrej/php
-      apt-get update
+      apt-get update -qq
       apt-get install -y apache2
       apt-get install -y php5.6
       
