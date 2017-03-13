@@ -15,7 +15,8 @@
         "zendframework/zend-mvc": "^3",
         "zendframework/zend-mvc-i18n": "*",
         "zendframework/zend-navigation": "*",
-        "doctrine/doctrine-orm-module": "^1.1"
+        "doctrine/doctrine-orm-module": "^1.1",
+        "gedmo/doctrine-extensions": "^2.4"
     },
     "require-dev": {
         "zendframework/zend-developer-tools": "*",
