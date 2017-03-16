@@ -5,8 +5,8 @@
 
 Vagrant.configure('2') do |config|
   
-  # Use official Ubuntu Server 14.04 LTS (Trusty Tahr)
-  config.vm.box = 'ubuntu/trusty64'
+  # Use official Ubuntu 16.04 LTS (Xenial Xerus)
+  config.vm.box = 'ubuntu/xenial64'
   
   # Forward host port 8080 to guest port 80
   config.vm.network :forwarded_port, guest: 80, host: 8080
@@ -16,11 +16,10 @@ Vagrant.configure('2') do |config|
     s.env = {APPLICATION_ENV:ENV['APPLICATION_ENV']}
     s.inline = <<-SHELL
       
-      # Install Apache 2.4 and PHP 5.6
-      add-apt-repository -y ppa:ondrej/php
-      apt-get update -qq
+      # Install Apache and PHP
       apt-get install -y apache2
-      apt-get install -y php5.6
+      apt-get install -y php
+      apt-get install -y libapache2-mod-php
       
       # Install MySql
       DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server
@@ -29,8 +28,8 @@ Vagrant.configure('2') do |config|
       a2enmod rewrite
       
       # install extra PHP modules
-      apt-get install -y php5.6-intl
-      apt-get install -y php5.6-mysql
+      apt-get install -y php-intl
+      apt-get install -y php-mysql
       
       # Create new site config file
       cat > /etc/apache2/sites-available/zf3-skeleton-application.conf <<-EOF
