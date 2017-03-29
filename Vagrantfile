@@ -30,6 +30,7 @@ Vagrant.configure('2') do |config|
       # install extra PHP modules
       apt-get install -y php-intl
       apt-get install -y php-mysql
+      apt-get install -y php-dom
       
       # Create new site config file
       cat > /etc/apache2/sites-available/zf3-skeleton-application.conf <<-EOF
