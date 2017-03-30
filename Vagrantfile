@@ -12,7 +12,7 @@ Vagrant.configure('2') do |config|
   config.vm.network :forwarded_port, guest: 80, host: 8080
   
   # Run shell script to set up the server
-  config.vm.provision :shell do |s|
+  config.vm.provision 'bootstrap', type: 'shell' do |s|
     s.env = {APPLICATION_ENV:ENV['APPLICATION_ENV']}
     s.inline = <<-SHELL
       
@@ -77,6 +77,6 @@ Vagrant.configure('2') do |config|
     SHELL
   end
   
-  config.vm.provision :shell, path: 'bin/install.sh'
+  config.vm.provision 'install', type: 'shell', path: 'bin/install.sh'
   
 end
