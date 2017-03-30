@@ -23,6 +23,7 @@ Vagrant.configure('2') do |config|
       apt-get install -y php-intl
       apt-get install -y php-mysql
       apt-get install -y php-dom
+      apt-get install -y php-mbstring
             
       # Install MySql
       DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server
