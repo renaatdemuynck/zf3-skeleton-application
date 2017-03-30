@@ -77,6 +77,6 @@ Vagrant.configure('2') do |config|
     SHELL
   end
   
-  config.vm.provision 'install', type: 'shell', path: 'bin/install.sh'
+  config.vm.provision 'install', type: 'shell', path: 'bin/install.sh', upload_path: '/vagrant/bin/install.sh'
   
 end
