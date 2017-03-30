@@ -6,6 +6,14 @@ cd "${BASH_SOURCE%/*}/.."
 # Create dir for log files
 mkdir -p data/logs
 
+# Install project dependencies with Composer
+echo "Installing project dependencies with Composer..."
+if [ -d "vendor" ]; then
+  echo "'vendor' folder already exists. Skipping."
+else
+  composer install
+fi
+
 # Create database 'zf3-skeleton-application'
 echo "Creating database 'zf3-skeleton-application'..."
 if mysql -u root -e 'use zf3-skeleton-application' 2> /dev/null; then

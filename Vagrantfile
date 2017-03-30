@@ -28,10 +28,16 @@ Vagrant.configure('2') do |config|
       DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server
       
       # Create database user
-      mysql -u root <<-SQL
+      echo "Creating database user for remote management..."
+      mysql -u root <<-"SQL"
 				CREATE USER IF NOT EXISTS `vagrant`@`%` IDENTIFIED BY "vagrant";
 				GRANT ALL PRIVILEGES ON *.* TO `vagrant`@`%`;
 			SQL
+      
+      # Install Composer globally
+      echo "Install Composer globally..."
+      curl -sS https://getcomposer.org/installer | php
+      mv composer.phar /usr/local/bin/composer
       
       # Enable Apache rewrite module
       a2enmod rewrite
