@@ -19,6 +19,7 @@
         "gedmo/doctrine-extensions": "^2.4"
     },
     "require-dev": {
+        "ext-zip": "*",
         "ext-dom": "*",
         "ext-mbstring": "*",
         "zendframework/zend-developer-tools": "*",

@@ -22,6 +22,7 @@ Vagrant.configure('2') do |config|
       apt-get install -y libapache2-mod-php
       apt-get install -y php-intl
       apt-get install -y php-mysql
+      apt-get install -y php-zip
       apt-get install -y php-dom
       apt-get install -y php-mbstring
             
