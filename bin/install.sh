@@ -29,7 +29,7 @@ if mysql -u root -e 'use zf3-skeleton-application' 2> /dev/null; then
 else
   # Create the database and user
   mysql -u root <<-"SQL"
-		CREATE DATABASE `zf3-skeleton-application`;
+		CREATE DATABASE `zf3-skeleton-application` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 		CREATE USER IF NOT EXISTS `zf3-skeleton-application`@`localhost` IDENTIFIED BY "zf3-skeleton-application";
 		GRANT ALL PRIVILEGES ON `zf3-skeleton-application`.* TO `zf3-skeleton-application`@`localhost`;
 	SQL
