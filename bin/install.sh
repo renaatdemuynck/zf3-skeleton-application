@@ -11,7 +11,7 @@ echo "Installing project dependencies with Composer..."
 if [ -d "vendor" ]; then
   echo "'vendor' folder already exists. Skipping."
 else
-  composer install
+  composer install -q -n
 fi
 
 # Create local config file
