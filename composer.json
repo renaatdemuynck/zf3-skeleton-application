@@ -32,5 +32,8 @@
         "psr-4": {
             "Application\\": "module/Application/src/"
         }
+    },
+    "config": {
+        "bin-compat": "full"
     }
 }
