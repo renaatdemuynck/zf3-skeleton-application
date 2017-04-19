@@ -39,7 +39,7 @@ else
   sed -i "s/'user' => ''/'user' => 'zf3-skeleton-application'/" config/autoload/local.config.php
   sed -i "s/'password' => ''/'password' => 'zf3-skeleton-application'/" config/autoload/local.config.php
   # Generate the tables using Doctrine tool
-  vendor/bin/doctrine-module orm:schema-tool:create
+  composer exec doctrine-module orm:schema-tool:create
 fi
 
 # Restore working dir
