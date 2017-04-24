@@ -24,7 +24,8 @@
         "ext-mbstring": "*",
         "zendframework/zend-developer-tools": "*",
         "phpunit/phpunit": "^5",
-        "behat/behat": "^3.3"
+        "behat/behat": "^3.3",
+        "squizlabs/php_codesniffer": "*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
