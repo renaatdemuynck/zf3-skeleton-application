@@ -73,12 +73,19 @@ Vagrant.configure('2') do |config|
       a2dissite 000-default
       a2ensite zf3-skeleton-application
       
+    SHELL
+  end
+  
+  config.vm.provision 'install', type: 'shell', path: 'bin/install.sh', upload_path: '/vagrant/bin/install.sh'
+  
+  # Run shell script to set up the server
+  config.vm.provision 'shell', run: 'always' do |s|
+    s.inline = <<-SHELL
+      
       # (Re)start Apache
       service apache2 restart
       
     SHELL
   end
-  
-  config.vm.provision 'install', type: 'shell', path: 'bin/install.sh', upload_path: '/vagrant/bin/install.sh'
   
 end
