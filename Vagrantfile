@@ -42,9 +42,6 @@ Vagrant.configure('2') do |config|
       curl -sS https://getcomposer.org/installer | php
       mv composer.phar /usr/local/bin/composer
       
-      # Force Composer to generate .BAT proxy files
-      composer config -g bin-compat full
-      
       # Enable Apache rewrite module
       a2enmod rewrite
       
