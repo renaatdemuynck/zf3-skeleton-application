@@ -15,19 +15,20 @@ Vagrant.configure('2') do |config|
   config.vm.provision 'bootstrap', type: 'shell' do |s|
     s.env = {APPLICATION_ENV:ENV['APPLICATION_ENV']}
     s.inline = <<-SHELL
+    
+      # Make debconf use a frontend that expects no interactive input
+      export DEBIAN_FRONTEND=noninteractive
       
-      # Install Apache and PHP
-      apt-get install -y apache2
-      apt-get install -y php
-      apt-get install -y libapache2-mod-php
-      apt-get install -y php-intl
-      apt-get install -y php-mysql
-      apt-get install -y php-zip
-      apt-get install -y php-dom
-      apt-get install -y php-mbstring
-            
-      # Install MySql
-      DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server
+      # Install Apache, MySql and PHP
+      apt-get -y install apache2
+      apt-get -y install mysql-server
+      apt-get -y install php
+      apt-get -y install libapache2-mod-php
+      apt-get -y install php-intl
+      apt-get -y install php-mysql
+      apt-get -y install php-zip
+      apt-get -y install php-dom
+      apt-get -y install php-mbstring
       
       # Create database user
       echo "Creating database user for remote management..."
