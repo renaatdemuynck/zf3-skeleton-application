@@ -11,7 +11,7 @@ echo "Installing project dependencies with Composer..."
 if [ -d "vendor" ]; then
   echo "'vendor' folder already exists. Skipping."
 else
-  composer install --no-interaction --no-suggest --no-progress
+  sudo -H -u ubuntu bash -c 'composer install --no-interaction --no-suggest --no-progress'
 fi
 
 # Create local config file
@@ -39,7 +39,7 @@ else
   sed -i "s/'user' => ''/'user' => 'zf3-skeleton-application'/" config/autoload/local.config.php
   sed -i "s/'password' => ''/'password' => 'zf3-skeleton-application'/" config/autoload/local.config.php
   # Generate the tables using Doctrine tool
-  composer exec doctrine-module orm:schema-tool:create
+  sudo -H -u ubuntu bash -c 'composer exec doctrine-module orm:schema-tool:create'
 fi
 
 # Restore working dir
