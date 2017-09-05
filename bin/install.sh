@@ -21,7 +21,7 @@ fi
 
 # Create database 'zf3-skeleton-application'
 echo "Creating database 'zf3-skeleton-application'..."
-if mysql -u root -e 'use zf3-skeleton-application' 2> /dev/null; then
+if mysql -u root -e 'use `zf3-skeleton-application`' 2> /dev/null; then
   echo "Database 'zf3-skeleton-application' already exists. Skipping."
 else
   # Create the database and user
