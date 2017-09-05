@@ -3,9 +3,6 @@
 # Change working dir to project root
 cd "${BASH_SOURCE%/*}/.."
 
-# Create dir for log files
-mkdir -p data/logs
-
 # Install project dependencies with Composer
 echo "Installing project dependencies with Composer..."
 if [ -d "vendor" ]; then

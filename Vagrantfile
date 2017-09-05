@@ -70,6 +70,9 @@ Vagrant.configure('2') do |config|
 				</VirtualHost>
 			EOF
       
+      # Create dir for log files
+      mkdir -p /vagrant/data/logs
+      
       # Enable the new site
       a2dissite 000-default
       a2ensite zf3-skeleton-application
