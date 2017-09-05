@@ -30,11 +30,16 @@ else
 		CREATE USER IF NOT EXISTS `zf3-skeleton-application`@`localhost` IDENTIFIED BY "zf3-skeleton-application";
 		GRANT ALL PRIVILEGES ON `zf3-skeleton-application`.* TO `zf3-skeleton-application`@`localhost`;
 	SQL
+  
+  # Create directory for generated entities
+  mkdir -p module/Application/src/Model/Entity
+  
   # Save the credentials in the config file
   sed -i "s/'host' => ''/'host' => 'localhost'/" config/autoload/local.config.php
   sed -i "s/'dbname' => ''/'dbname' => 'zf3-skeleton-application'/" config/autoload/local.config.php
   sed -i "s/'user' => ''/'user' => 'zf3-skeleton-application'/" config/autoload/local.config.php
   sed -i "s/'password' => ''/'password' => 'zf3-skeleton-application'/" config/autoload/local.config.php
+  
   # Generate the tables using Doctrine tool
   sudo -H -u ubuntu bash -c 'composer exec doctrine-module orm:schema-tool:create'
 fi
