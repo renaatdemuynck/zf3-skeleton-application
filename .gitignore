@@ -3,3 +3,5 @@ data/
 vendor/
 composer.lock
 *.log
+config/autoload/local.config.php
+config/autoload/*.local.config.php
